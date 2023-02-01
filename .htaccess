@@ -1,4 +1,6 @@
-Options -MultiViews
+Options +FollowSymlinks
+Options -Indexes
+
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
+RewriteRule \.(js|css|map|jpe?g|svg|gif|png|eot|ttf|woff2?)(\?.*)?$ - [NC,QSA,L]
+RewriteRule .* index.html [NC,QSA,L]
